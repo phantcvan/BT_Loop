@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        document.write("Hình 1 <br>")
+        for (let i = 1; i <= 5; i++) {
+            let stars1 = '';
+            for (let j = 1; j <= i; j++) {
+                stars1 += '* ';
+            }
+            document.write(stars1 + "<br>");
+        }
+
+        document.write("Hình 2 <br>")
+        for (let i = 5; i > 0; i--) {
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>")
+        }
+
+        document.write("Hình 3 <br>")
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+            let stars = '';
+            for (let j = 1; j <= n - i; j++) {
+                stars += '&nbsp;&nbsp;&nbsp;';
+            }
+            for (let k = 1; k <= i; k++) {
+                stars += '* ';
+            }
+            document.write(stars + '<br>')
+        }
+
+        document.write("Hình 4 <br>")
+        for (let i = 1; i <= 5; i++) {
+            let star = '';
+            for (let j = 5; j >= n - i; j--) {
+                star += '&nbsp;&nbsp;&nbsp;';
+            }
+            for (let k = 1; k <= n - i + 1; k++) {
+                star += '* ';
+            }
+            document.write(star + '<br>')
+        }
+
+        document.write("Hình chữ nhật <br>")
+        let height = 7;
+        let width = 20;
+
+        for (let row = 1; row <= height; row++) {
+            let rectangle = '';
+            for (let col = 1; col <= width; col++) {
+                if (row == 1 || row == height || col == 1 || col == width) {
+                    rectangle += '*';
+                } else {
+                    rectangle += '&nbsp;&nbsp;';
+                }
+            }
+            document.write(rectangle + '<br>');
+        }
+
+        document.write("Trái tim <br>")
+        for (let row = 1; row <= 7; row++) {
+            let heart = '';
+            for (let col = 1; col <= 13; col++) {
+                if (
+                    (row == 1 && (col == 3 || col == 4 || col == 5 || col == 9 || col == 10 || col == 11)) ||
+                    (row == 2 && (col == 2 || col == 6 || col == 8 || col == 12)) ||
+                    (row == 3 && (col == 1 || col == 7 || col == 13)) ||
+                    (row == 4 && (col == 2 || col == 12)) ||
+                    (row == 5 && (col == 4 || col == 10)) ||
+                    (row == 6 && (col == 5 || col == 9)) ||
+                    (row == 7 && col == 7)
+                ) {
+                    heart += '*';
+                }
+                else {
+                    heart += '&nbsp;&nbsp;';
+                }
+            }
+            document.write(heart + "<br>");
+        }
+
+    </script>
+</body>
+
+</html>
