@@ -56,7 +56,6 @@
         document.write("Hình chữ nhật <br>")
         let height = 7;
         let width = 20;
-
         for (let row = 1; row <= height; row++) {
             let rectangle = '';
             for (let col = 1; col <= width; col++) {
@@ -70,7 +69,8 @@
         }
 
         document.write("Trái tim <br>")
-        for (let row = 1; row <= 7; row++) {
+        const colors = ['red', 'green', 'blue', 'orange', 'purple', 'pink'];
+         for (let row = 1; row <= 7; row++) {
             let heart = '';
             for (let col = 1; col <= 13; col++) {
                 if (
@@ -82,7 +82,8 @@
                     (row == 6 && (col == 5 || col == 9)) ||
                     (row == 7 && col == 7)
                 ) {
-                    heart += '*';
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    heart += `<span class="blink" style="color: ${randomColor};">*</span>`;
                 }
                 else {
                     heart += '&nbsp;&nbsp;';
@@ -90,6 +91,10 @@
             }
             document.write(heart + "<br>");
         }
+        const st = document.querySelectorAll("span:contains('*')");
+        st.forEach(function (star) {
+            star.addEventListener('animationiteration', changeStarColor);
+        });
 
     </script>
 </body>
